@@ -23,7 +23,7 @@
       <!-- Buttons -->
       <div class="mt-6 flex justify-center gap-4 flex-wrap">
         <a
-          href="../src/assets/Kevin_Leano_Resume.pdf"
+          href="/Resume/Kevin_Leano_Resume.pdf"
           download
           class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded shadow transition"
         >

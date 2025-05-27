@@ -114,7 +114,7 @@ const projects = [
     id: 2,
     title: 'Job Tracker App',
     description: 'A job application tracker built with Laravel and Vue.js.',
-    link: '#',
+    link: 'https://github.com/zohan197/JobApplicationTracker',
     screenshots: [
       '/screenshots/JobTracker/1Dashboard.png',
       '/screenshots/JobTracker/2Joblisting-1.png',
@@ -132,7 +132,7 @@ const projects = [
     title: 'Inventory Management SPA',
     description:
       'An inventory system using ASP.NET Core backend and Vue.js frontend.',
-    link: '#',
+    link: 'https://github.com/zohan197/InventorySystem',
     screenshots: [
       '/screenshots/IMS/1Dashboard.png',
       '/screenshots/IMS/2Products-1.png',

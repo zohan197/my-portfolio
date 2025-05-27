@@ -106,7 +106,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import emailjs from 'emailjs-com';
 import Input from '../components/ui/input/Input.vue';
 import { Textarea } from '../components/ui/Textarea';
@@ -121,6 +121,16 @@ import {
   AlertDialogAction,
 } from '@/components/ui/alert-dialog';
 import { CheckCircle, XCircle } from 'lucide-vue-next';
+import { useReCaptcha } from 'vue-recaptcha-v3';
+
+let executeRecaptcha: ((action: string) => Promise<string>) | null = null;
+
+onMounted(() => {
+  const recaptcha = useReCaptcha();
+  if (recaptcha && typeof recaptcha.executeRecaptcha === 'function') {
+    executeRecaptcha = recaptcha.executeRecaptcha;
+  }
+});
 
 const name = ref('');
 const email = ref('');
@@ -138,13 +148,24 @@ const honeypot = ref('');
 
 const sendEmail = async () => {
   loading.value = true;
+
+  if (!name.value || !email.value || !message.value) {
+    isSuccess.value = false;
+    dialogTitle.value = 'Missing Fields';
+    dialogMessage.value = 'Please fill in all required fields.';
+    dialogOpen.value = true;
+    loading.value = false;
+    return;
+  }
+
   const now = new Date().toLocaleString();
 
   if (honeypot.value) {
+    loading.value = false;
     return
   }
   const dateNow = Date.now();
-  if (dateNow - lastSubmitTime < 30000) {
+  if (dateNow - lastSubmitTime < 60000) {
     isSuccess.value = false;
     dialogTitle.value = 'Failed to Send';
     dialogMessage.value = 'Please wait a few seconds before sending again.';
@@ -152,18 +173,29 @@ const sendEmail = async () => {
     return;
   }
   lastSubmitTime = dateNow;
+  // reCAPTCHA check
+  try {
+    if (!executeRecaptcha) {
+      throw new Error('reCAPTCHA not ready');
+    }
+    await executeRecaptcha('submit');
+  } catch (e) {
+    console.error('reCAPTCHA failed', e);
+    loading.value = false;
+    return;
+  }
 
   try {
   await emailjs.send(
-    'service_5ia5khm',
-    'template_kw5fg75',
+    'service_5ia5khm', // replace with your service ID
+    'template_kw5fg75', // replace with your template ID
     {
       name: name.value + '(' + email.value + ')',
       time: now,
       message: message.value,
       email: email.value,
     },
-    'iM3vgCa5yMxCInqfn'
+    'iM3vgCa5yMxCInqfn' // replace with Public Key
   );
 
   isSuccess.value = true;
@@ -181,6 +213,6 @@ const sendEmail = async () => {
     dialogOpen.value = true;
     console.error(error);
   }
-  setTimeout(() => loading.value = false, 30000);
+  setTimeout(() => loading.value = false, 4000);
 };
 </script>
