@@ -43,37 +43,31 @@
   </section>
 </template>
 
-<script setup>
-const backendStack = [
-  { name: 'C#', icon: '../src/assets/icons/csharp.svg' },
-  { name: '.NET Core', icon: '../src/assets/icons/dotnetcore.svg' },
-  { name: 'VB.NET', icon: '../src/assets/icons/dotnet.svg' },
-  { name: 'ASP.NET', icon: '../src/assets/icons/dotnet.svg' },
-  { name: 'PHP', icon: '../src/assets/icons/php.svg' },
-  { name: 'Laravel', icon: '../src/assets/icons/laravel.svg' },
-  { name: 'MySQL', icon: '../src/assets/icons/mysql.svg' },
-  { name: 'SQL Server', icon: '../src/assets/icons/sqlserver.svg' }
-];
+<script setup lang="ts">
+  const backendStack = [
+    { name: 'C#', icon: '../src/assets/icons/csharp.svg' },
+    { name: '.NET Core', icon: '../src/assets/icons/dotnetcore.svg' },
+    { name: 'VB.NET', icon: '../src/assets/icons/dotnet.svg' },
+    { name: 'ASP.NET', icon: '../src/assets/icons/dotnet.svg' },
+    { name: 'PHP', icon: '../src/assets/icons/php.svg' },
+    { name: 'Laravel', icon: '../src/assets/icons/laravel.svg' },
+    { name: 'MySQL', icon: '../src/assets/icons/mysql.svg' },
+    { name: 'SQL Server', icon: '../src/assets/icons/sqlserver.svg' }
+  ];
 
-const frontendStack = [
-  { name: 'JavaScript', icon: '../src/assets/icons/javascript.svg' },
-  { name: 'Vue.js', icon: '../src/assets/icons/vue.svg' },
-  { name: 'HTML5', icon: '../src/assets/icons/html5.svg' },
-  { name: 'CSS3', icon: '../src/assets/icons/css3.svg' },
-  { name: 'jQuery', icon: '../src/assets/icons/jquery.svg' }
-];
+  const frontendStack = [
+    { name: 'JavaScript', icon: '../src/assets/icons/javascript.svg' },
+    { name: 'Vue.js', icon: '../src/assets/icons/vue.svg' },
+    { name: 'HTML5', icon: '../src/assets/icons/html5.svg' },
+    { name: 'CSS3', icon: '../src/assets/icons/css3.svg' },
+    { name: 'jQuery', icon: '../src/assets/icons/jquery.svg' }
+  ];
 
-const toolsStack = [
-  { name: 'Azure DevOps', icon: '../src/assets/icons/azure.svg' },
-  { name: 'GitHub', icon: '../src/assets/icons/github.svg' },
-  { name: 'Git', icon: '../src/assets/icons/git.svg' },
-  { name: 'Postman', icon: '../src/assets/icons/postman.svg' },
-  { name: 'GitLab', icon: '../src/assets/icons/gitlab.svg' }
-];
+  const toolsStack = [
+    { name: 'Azure DevOps', icon: '../src/assets/icons/azure.svg' },
+    { name: 'GitHub', icon: '../src/assets/icons/github.svg' },
+    { name: 'Git', icon: '../src/assets/icons/git.svg' },
+    { name: 'Postman', icon: '../src/assets/icons/postman.svg' },
+    { name: 'GitLab', icon: '../src/assets/icons/gitlab.svg' }
+  ];
 </script>
-
-<style scoped>
-section {
-  scroll-margin-top: 80px;
-}
-</style>

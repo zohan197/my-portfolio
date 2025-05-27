@@ -17,7 +17,7 @@ import Hero from '@/Pages/Hero.vue'
 import About from '@/Pages/AboutMe.vue'
 import Projects from '@/Pages/Projects.vue'
 import Contact from '@/Pages/Contact.vue'
-import { onMounted, ref, onBeforeUnmount } from 'vue'
+import { onMounted, onBeforeUnmount } from 'vue'
 import { useNavigationStore } from '@/stores/useNavigationStore'
 
 const store = useNavigationStore()
