@@ -93,8 +93,8 @@
     </div>
 </template>
 
-<script setup>
-import { ref, watch, onMounted, onBeforeUnmount } from 'vue'
+<script setup lang="ts">
+import { ref } from 'vue'
 
 const projects = [
   {
@@ -153,16 +153,17 @@ const projects = [
 const modalOpen = ref(false)
 const currentImage = ref('')
 const currentIndex = ref(0)
-let currentGallery = []
+let currentGallery: string[] = []
 
-function openModal(gallery, index) {
+
+function openModal(gallery: string[], index:number) {
   currentGallery = gallery
   currentIndex.value = index
   currentImage.value = gallery[index]
   modalOpen.value = true
   // Focus the modal for keyboard navigation
   setTimeout(() => {
-    const modal = document.querySelector('[role="dialog"]')
+    const modal = document.querySelector('[role="dialog"]') as HTMLElement | null
     modal?.focus()
   }, 0)
 }

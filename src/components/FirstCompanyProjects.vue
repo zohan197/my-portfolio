@@ -39,7 +39,7 @@
   </section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const projects = [
   {
     title: 'ASKI Group of Companies, Inc.',
