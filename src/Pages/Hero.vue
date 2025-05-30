@@ -1,7 +1,3 @@
-<script setup>
-import { Motion } from '@motionone/vue'
-</script>
-
 <template>
   <section
     class="relative min-h-[80vh] flex items-center justify-center text-center px-6 overflow-hidden"
@@ -76,3 +72,6 @@ import { Motion } from '@motionone/vue'
     </div>
   </section>
 </template>
+<script setup lang="ts">
+import { Motion } from '@motionone/vue'
+</script>
