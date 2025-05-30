@@ -10,29 +10,23 @@
       </p>
     </div>
 
-    <div class="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-8 max-w-5xl mx-auto">
-      <!-- <h3 class="text-3xl font-bold mb-8 text-center text-indigo-600">About Me</h2> -->
+    <div
+      ref="techStackRef"
+      :class="[
+        'bg-white dark:bg-gray-800 shadow-lg rounded-xl p-8 max-w-5xl mx-auto transition-all duration-700 ease-in-out',
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
+      ]"
+    >
       <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-6 text-center">Tech Stack</h3>
+
       <div class="space-y-6">
-        <div>
+        <div v-for="(stack, index) in techStacks" :key="index">
           <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 justify-items-center">
-            <div v-for="tech in backendStack" :key="tech.name" class="flex flex-col items-center text-center transform transition-transform hover:scale-110">
-              <img :src="tech.icon" :alt="tech.name" class="w-10 h-10 mb-2" />
-              <span class="text-sm text-gray-700 dark:text-gray-200">{{ tech.name }}</span>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 justify-items-center">
-            <div v-for="tech in frontendStack" :key="tech.name" class="flex flex-col items-center text-center transform transition-transform hover:scale-110">
-              <img :src="tech.icon" :alt="tech.name" class="w-10 h-10 mb-2" />
-              <span class="text-sm text-gray-700 dark:text-gray-200">{{ tech.name }}</span>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 justify-items-center">
-            <div v-for="tech in toolsStack" :key="tech.name" class="flex flex-col items-center text-center transform transition-transform hover:scale-110">
+            <div
+              v-for="tech in stack"
+              :key="tech.name"
+              class="flex flex-col items-center text-center transition-transform duration-500 ease-in-out transform hover:scale-105"
+            >
               <img :src="tech.icon" :alt="tech.name" class="w-10 h-10 mb-2" />
               <span class="text-sm text-gray-700 dark:text-gray-200">{{ tech.name }}</span>
             </div>
@@ -44,30 +38,36 @@
 </template>
 
 <script setup lang="ts">
-  const backendStack = [
-    { name: 'C#', icon: '/icons/csharp.svg' },
-    { name: '.NET Core', icon: '/icons/dotnetcore.svg' },
-    { name: 'VB.NET', icon: '/icons/dotnet.svg' },
-    { name: 'ASP.NET', icon: '/icons/dotnet.svg' },
-    { name: 'PHP', icon: '/icons/php.svg' },
-    { name: 'Laravel', icon: '/icons/laravel.svg' },
-    { name: 'MySQL', icon: '/icons/mysql.svg' },
-    { name: 'SQL Server', icon: '/icons/sqlserver.svg' }
-  ];
+import { useInView } from '@/composables/useInView';
 
-  const frontendStack = [
-    { name: 'JavaScript', icon: '/icons/javascript.svg' },
-    { name: 'Vue.js', icon: '/icons/vue.svg' },
-    { name: 'HTML5', icon: '/icons/html5.svg' },
-    { name: 'CSS3', icon: '/icons/css3.svg' },
-    { name: 'jQuery', icon: '/icons/jquery.svg' }
-  ];
+const backendStack = [
+  { name: 'C#', icon: '/icons/csharp.svg' },
+  { name: '.NET Core', icon: '/icons/dotnetcore.svg' },
+  { name: 'VB.NET', icon: '/icons/dotnet.svg' },
+  { name: 'ASP.NET', icon: '/icons/dotnet.svg' },
+  { name: 'PHP', icon: '/icons/php.svg' },
+  { name: 'Laravel', icon: '/icons/laravel.svg' },
+  { name: 'MySQL', icon: '/icons/mysql.svg' },
+  { name: 'SQL Server', icon: '/icons/sqlserver.svg' }
+];
 
-  const toolsStack = [
-    { name: 'Azure DevOps', icon: '/icons/azure.svg' },
-    { name: 'GitHub', icon: '/icons/github.svg' },
-    { name: 'Git', icon: '/icons/git.svg' },
-    { name: 'Postman', icon: '/icons/postman.svg' },
-    { name: 'GitLab', icon: '/icons/gitlab.svg' }
-  ];
+const frontendStack = [
+  { name: 'JavaScript', icon: '/icons/javascript.svg' },
+  { name: 'Vue.js', icon: '/icons/vue.svg' },
+  { name: 'HTML5', icon: '/icons/html5.svg' },
+  { name: 'CSS3', icon: '/icons/css3.svg' },
+  { name: 'jQuery', icon: '/icons/jquery.svg' }
+];
+
+const toolsStack = [
+  { name: 'Azure DevOps', icon: '/icons/azure.svg' },
+  { name: 'GitHub', icon: '/icons/github.svg' },
+  { name: 'Git', icon: '/icons/git.svg' },
+  { name: 'Postman', icon: '/icons/postman.svg' },
+  { name: 'GitLab', icon: '/icons/gitlab.svg' }
+];
+
+const techStacks = [backendStack, frontendStack, toolsStack];
+
+const { target: techStackRef, isVisible } = useInView();
 </script>

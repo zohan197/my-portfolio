@@ -44,7 +44,7 @@ onMounted(() => {
     },
     {
       threshold: 0.3,
-      rootMargin: '0px 0px -30% 0px' // Adjust as needed for better visibility
+      rootMargin: '0px 0px -20% 0px' // Adjust as needed for better visibility
     }
   )
 
