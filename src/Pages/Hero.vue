@@ -36,7 +36,7 @@
         :transition="{ duration: 0.6, delay: 0.4 }"
       >
         Full-Stack Developer with 7+ years of experience building scalable web and desktop applications. 
-        Proficient in C#, ASP.NET, SQL, and modern frontend tools like Vue.js and JavaScript. 
+        Proficient in C#, ASP.NET, PHP Laravel, and modern frontend tools like Vue.js and JavaScript. 
         Passionate about crafting efficient solutions and collaborating across teams to deliver high-quality software.
       </Motion>
 

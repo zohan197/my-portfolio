@@ -1,5 +1,12 @@
 <template>
-    <div class="mb-16">
+    <div
+      ref="projectsRef"
+      class="mb-16 transition-all duration-800 ease-in-out"
+      :class="{
+        'opacity-100 translate-y-0': isVisible,
+        'opacity-0 translate-y-10 pointer-events-none': !isVisible
+      }"
+    >
     <h3 class="text-2xl font-semibold mb-4 text-center text-gray-800 dark:text-white">
       Personal Projects – Modern Web Development
     </h3>
@@ -95,6 +102,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useInView } from '@/composables/useInView';
 
 const projects = [
   {
@@ -187,6 +195,8 @@ function prevImage() {
     (currentIndex.value - 1 + currentGallery.length) % currentGallery.length
   currentImage.value = currentGallery[currentIndex.value]
 }
+
+const { target: projectsRef, isVisible } = useInView();
 </script>
 
 <style scoped>
