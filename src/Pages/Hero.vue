@@ -44,7 +44,7 @@
       <div class="mt-6 flex justify-center gap-4 flex-wrap">
         <Motion
           tag="a"
-          href="/Resume/Kevin_Leano_Resume.pdf"
+          href="/resume/Kevin_Leano_Resume_v2.pdf"
           download
           class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded shadow transition-transform duration-300"
           :initial="{ opacity: 0, y: 20 }"
