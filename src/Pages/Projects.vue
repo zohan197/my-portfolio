@@ -4,6 +4,7 @@
     <PersonalProjects/>
     <FirstCompanyProjects/>
     <SecondCompanyProjects/>
+    <PrivateClientProjects/>
   </div>
 </template>
 
@@ -11,5 +12,6 @@
 import PersonalProjects from '@/components/PersonalProjects.vue';
 import FirstCompanyProjects from '@/components/FirstCompanyProjects.vue';
 import SecondCompanyProjects from '@/components/SecondCompanyProjects.vue';
+import PrivateClientProjects from '@/components/PrivateClientProjects.vue';
 </script>
 
