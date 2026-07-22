@@ -3,7 +3,7 @@
     <div class="text-center mb-12">
   <h2 class="text-4xl font-extrabold mb-6 text-indigo-600 dark:text-indigo-400">About Me</h2>
   <p class="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
-    Hi! I'm <strong class="text-indigo-600 dark:text-indigo-400">Kevin Leano</strong>, a developer based in Cabanatuan City, Philippines. Over the past 7 years, I’ve built everything from enterprise applications to internal tools—always with a focus on performance, usability, and maintainability.
+    Hi! I'm <strong class="text-indigo-600 dark:text-indigo-400">Kevin Leano</strong>, a developer based in Cabanatuan City, Philippines. Over the past 9 years, I’ve built everything from enterprise applications to internal tools—always with a focus on performance, usability, and maintainability.
   </p>
   <p class="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mt-4">
     I work mostly with Vue.js on the frontend, and both .NET and PHP Laravel on the backend. Lately, I’ve been exploring React and expanding my frontend toolkit. I'm open to <span class="font-semibold text-indigo-600 dark:text-indigo-400">freelance work</span> and actively seeking <span class="font-semibold text-indigo-600 dark:text-indigo-400">full-time remote opportunities</span>.
@@ -50,6 +50,7 @@ const backendStack = [
   { name: '.NET Core', icon: '/icons/dotnetcore.svg' },
   { name: 'VB.NET', icon: '/icons/dotnet.svg' },
   { name: 'ASP.NET', icon: '/icons/dotnet.svg' },
+  { name: 'Dapper', icon: '/icons/dapper.svg' },
   { name: 'PHP', icon: '/icons/php.svg' },
   { name: 'Laravel', icon: '/icons/laravel.svg' },
   { name: 'MySQL', icon: '/icons/mysql.svg' },
@@ -57,10 +58,13 @@ const backendStack = [
 ];
 
 const frontendStack = [
+  { name: 'TypeScript', icon: '/icons/typescript.svg' },
   { name: 'JavaScript', icon: '/icons/javascript.svg' },
   { name: 'Vue.js', icon: '/icons/vue.svg' },
   { name: 'HTML5', icon: '/icons/html5.svg' },
   { name: 'CSS3', icon: '/icons/css3.svg' },
+  { name: 'Tailwind CSS', icon: '/icons/tailwind.svg' },
+  { name: 'Bootstrap', icon: '/icons/bootstrap.svg' },
   { name: 'jQuery', icon: '/icons/jquery.svg' }
 ];
 
@@ -72,7 +76,12 @@ const toolsStack = [
   { name: 'GitLab', icon: '/icons/gitlab.svg' }
 ];
 
-const techStacks = [backendStack, frontendStack, toolsStack];
+const aiStack = [
+  { name: 'GitHub Copilot', icon: '/icons/githubcopilot.svg' },
+  { name: 'Claude AI', icon: '/icons/claude.svg' }
+];
+
+const techStacks = [backendStack, frontendStack, toolsStack, aiStack];
 
 const { target: techStackRef, isVisible } = useInView();
 </script>

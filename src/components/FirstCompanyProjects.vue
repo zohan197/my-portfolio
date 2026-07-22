@@ -1,8 +1,11 @@
 <template>
   <section class="mb-16">
-    <h3 class="text-2xl font-bold text-center mb-4 text-gray-800 dark:text-white">
+    <h3 class="text-2xl font-bold text-center mb-1 text-gray-800 dark:text-white">
       Web Development Contributions at ASKI Group of Companies
     </h3>
+    <p class="text-center text-sm font-medium text-indigo-500 dark:text-indigo-400 mb-4">
+      Jul 2017 – Jun 2022
+    </p>
     <p class="text-center text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-6">
       At ASKI, I built multiple responsive, database-driven websites across the company's core and sub-brands. While designs were typically provided as PDF mockups, I converted each into fully functional and mobile-ready platforms using ASP.NET Web Forms, HTML, CSS, Bootstrap, JavaScript, and jQuery AJAX.
     </p>

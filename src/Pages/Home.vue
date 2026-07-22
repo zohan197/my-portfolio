@@ -43,8 +43,14 @@ onMounted(() => {
       })
     },
     {
-      threshold: 0.3,
-      rootMargin: '0px 0px -20% 0px' // Adjust as needed for better visibility
+      // threshold is a fraction of each section's OWN height, so a fixed
+      // percentage breaks once a section (e.g. Projects) grows tall enough
+      // that its own height in view never reaches it. Use threshold: 0 with
+      // rootMargin to define a fixed detection band near the top of the
+      // viewport instead — a section activates as soon as it reaches that
+      // band, regardless of how tall the section itself is.
+      threshold: 0,
+      rootMargin: '0px 0px -70% 0px' // active band = top 30% of the viewport
     }
   )
 

@@ -35,8 +35,8 @@
         :animate="{ opacity: 1, y: 0 }"
         :transition="{ duration: 0.6, delay: 0.4 }"
       >
-        Full-Stack Developer with 7+ years of experience building scalable web and desktop applications. 
-        Proficient in C#, ASP.NET, PHP Laravel, and modern frontend tools like Vue.js and JavaScript. 
+        Full-Stack Developer with 9+ years of experience building scalable web and desktop applications.
+        Proficient in C#, ASP.NET, PHP Laravel, and modern frontend tools like Vue.js and JavaScript.
         Passionate about crafting efficient solutions and collaborating across teams to deliver high-quality software.
       </Motion>
 
@@ -44,7 +44,7 @@
       <div class="mt-6 flex justify-center gap-4 flex-wrap">
         <Motion
           tag="a"
-          href="/resume/Kevin_Leano_Resume_v2.pdf"
+          href="/resume/Kevin_Leano_Resume_v4.pdf"
           download
           class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded shadow transition-transform duration-300"
           :initial="{ opacity: 0, y: 20 }"
